@@ -20,4 +20,16 @@ class CalculatorTest < ActiveSupport::TestCase
   test "supports custom delimiters" do
     assert_equal 6, Calculator.add("//;\n1;2;3")
   end
+
+	test "raises exception for negative numbers" do
+    assert_raises(RuntimeError, "negative numbers not allowed -2") do
+      Calculator.add("1,-2")
+    end
+  end
+
+  test "raises exception for multiple negative numbers" do
+    assert_raises(RuntimeError, "negative numbers not allowed -2,-3") do
+      Calculator.add("1,-2,-3")
+    end
+  end
 end
