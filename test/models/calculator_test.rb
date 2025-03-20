@@ -16,4 +16,8 @@ class CalculatorTest < ActiveSupport::TestCase
   test "newlines between numbers" do
     assert_equal 6, Calculator.add("1\n2,3")
   end
+
+  test "supports custom delimiters" do
+    assert_equal 6, Calculator.add("//;\n1;2;3")
+  end
 end
