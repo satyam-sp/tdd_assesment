@@ -1,6 +1,6 @@
 class Calculator
     def self.add(numbers)
-      numbers.sum
+       return 0 if numbers.empty?
     end
 end
   
