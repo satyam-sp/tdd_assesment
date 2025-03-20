@@ -6,7 +6,10 @@ class Calculator
 		else
 			delimiter = /[\n,]/
 		end
-		numbers.split(delimiter).map(&:to_i).sum
+		numbers_array = numbers.split(delimiter).map(&:to_i)
+		negatives = numbers_array.select { |num| num < 0 }
+    raise "negative numbers not allowed #{negatives.join(',')}" unless negatives.empty?
+    numbers_array.sum
 	end
 
 	private
