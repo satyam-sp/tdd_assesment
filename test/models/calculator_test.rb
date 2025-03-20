@@ -12,4 +12,8 @@ class CalculatorTest < ActiveSupport::TestCase
   test "comma-separated numbers return the sum" do
     assert_equal 6, Calculator.add("1,5")
   end
+
+  test "newlines between numbers" do
+    assert_equal 6, Calculator.add("1\n2,3")
+  end
 end
