@@ -5,4 +5,7 @@ class ApplicationController < ActionController::Base
   puts "Head"
   puts "head1"
   puts "head2"
+
+   puts "Head"
+      puts "Head1"
 end
